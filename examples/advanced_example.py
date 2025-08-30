@@ -4,11 +4,16 @@ import zipfile
 import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-MODEL_DIR = os.path.join(BASE_DIR, 'data')
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+MODEL_DIR = os.path.join(BASE_DIR, 'models')
+os.makedirs(MODEL_DIR, exist_ok=True)
+
+filepath = os.path.join(MODEL_DIR, 'collaborative_filtering_model.pth')
+
 # os.makedirs(MODEL_DIR, exist_ok=True)
 # Get's the real data
 def get_real_data():
-    zip_path = os.path.join(MODEL_DIR, 'ml-latest1m.zip')
+    zip_path = os.path.join(DATA_DIR, 'ml-latest1m.zip')
     
     with zipfile.ZipFile(zip_path, 'r') as z:
         with z.open("ratings.csv") as f:
