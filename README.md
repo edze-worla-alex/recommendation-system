@@ -200,11 +200,15 @@ recommendation-system/
 │   ├── basic_example.py        # Basic usage example
 │   └── advanced_example.py     # Advanced features demo
 ├── data/
-│   └── sample_ratings.csv      # Sample data file
+│   └── ml-latest1m.zip      # Sample data file
 └── models/
-    └── pretrained_model.pth    # Saved model example
+    └── collaborative_filtering_model.pth    # Saved model example
 ```
-
+## Run
+```bash
+1. python -m examples.basic_example
+2. python -m examples.advanced_example
+```
 ## Customization
 
 ### Custom Loss Functions
